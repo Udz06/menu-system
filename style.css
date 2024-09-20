@@ -1,0 +1,198 @@
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 100px;
+    background-color: blanchedalmond;
+}
+
+/* Menu */
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.nav .logo h1 {
+    font-weight: 600;
+    font-family: sans-serif;
+    color: black;
+}
+
+.nav .logo b {
+    color: orangered;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav ul li {
+    margin-right: 30px;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 17px;
+}
+
+/* Active link styling */
+.nav ul .active::after {
+    content: "";
+    width: 50%;
+    height: 3px;
+    background-color: orangered;
+    display: block;
+    position: relative;
+    margin-left: 10px;
+}
+
+input {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.signin {
+    background: transparent;
+    border: none;
+}
+
+.signup {
+    background-color: orangered;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Content */
+.content {
+    display: flex;
+    align-items: center;
+    margin-top: 120px;
+}
+
+.content .content-left {
+    flex: 1;
+    max-width: 50%;
+}
+
+.content .content-left .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.content .content-left .info h2 {
+    font-size: 60px;
+    font-family: sans-serif;
+    margin-bottom: 30px;
+}
+
+.content .content-left .info p {
+    font-size: 23px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    font-family: sans-serif;
+}
+
+.content .content-left button {
+    padding: 10px 23px;
+    background-color: orangered;
+    color: aliceblue;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.content .content-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.animated-image {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    object-fit: cover;
+    animation: rotate 10s linear infinite;
+    margin-left: 150px;
+}
+
+/* Animation */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Categories */
+.category {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.category .align-items {
+    width: 90%;
+    position: relative;
+    margin-top: 100px;
+}
+
+.category .card-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; /* Add some space between cards */
+}
+
+.category .card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    outline: 2px solid wheat;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the items */
+    text-align: center; /* Center text */
+}
+
+.category .card img {
+    width: 100px; /* Fixed width */
+    height: 100px; /* Fixed height to maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners */
+    margin-bottom: 10px; /* Space below the image */
+    object-fit: cover; /* Ensure image covers the area */
+}
+
+/* Additional styling for text */
+.category .food-title,
+.category .desc-food,
+.category .price {
+    margin-top: 10px; /* Space above the text */
+}
+
+.category .food-title {
+    font-weight: 600;
+}
+
+.category .desc-food {
+    margin: 10px 0; /* Space around description */
+}
+
+.category .price {
+    font-size: 18px; /* Slightly larger font for price */
+    font-weight: bold; /* Make price bold */
+}
