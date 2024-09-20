@@ -61,20 +61,6 @@ input {
     cursor: pointer;
     font-weight: 600;
 }
-
-.signin {
-    background: transparent;
-    border: none;
-}
-
-.signup {
-    background-color: orangered;
-    color: white;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-}
-
 /* Content */
 .content {
     display: flex;
