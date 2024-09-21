@@ -182,3 +182,121 @@ input {
     font-size: 18px; /* Slightly larger font for price */
     font-weight: bold; /* Make price bold */
 }
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #000000;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #000000;
+}
+
+.social-icons a:hover {
+    color: black;
+    transform: scale(1.3) translateY(-5px);
+    background-color: #000000;
+    box-shadow: 0 0 25px #030303;
+}
+/* Services */
+.services {
+    padding: 50px 0;
+    background-color: transparent;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.service-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.service-item p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Social Media Icons */
+.social {
+    text-align: center;
+    padding: 30px 0;
+    background-color: transparent;
+}
+
+.social-icons a {
+    color: #080808;
+    font-size: 24px;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #ffffff;
+}
+/* About Canteen Section */
+.about-canteen {
+    display: flex;
+    justify-content: center; /* Align content in the center horizontally */
+    margin-top: 50px;
+}
+.about-container {
+    max-width: 900px; /* Limit the width */
+    background-color: #fff; /* White background for the container */
+    padding: 30px; /* Space inside the container */
+    border: 3px solid #ff6347; /* Border around the container */
+    border-radius: 10px; /* Rounded corners for the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a 3D effect */
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ff6347; /* Matching the border color */
+    font-size: 40px;
+}
+
+p {
+    font-size: 25px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify; /* Justify the text */
+    color: #555;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
