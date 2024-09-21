@@ -258,11 +258,6 @@ input {
     color: #ffffff;
 }
 /* About Canteen Section */
-.about-canteen {
-    display: flex;
-    justify-content: center; /* Align content in the center horizontally */
-    margin-top: 50px;
-}
 .about-container {
     max-width: 800px; /* Limit the width */
     background-color: #fff; /* White background for the container */
@@ -270,6 +265,11 @@ input {
     border: 3px solid #ff6347; /* Border around the container */
     border-radius: 10px; /* Rounded corners for the container */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a 3D effect */
+}
+.about-canteen {
+    display: flex;
+    justify-content: center; /* Align content in the center horizontally */
+    margin-top: 50px;
 }
 h1 {
     text-align: center;
