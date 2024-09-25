@@ -51,12 +51,11 @@ body {
 }
 
 
-/* Active link styling */
 .nav ul .active::after {
     content: "";
+    background-color: #ff6347;
     width: 50%;
     height: 3px;
-    background-color: orangered;
     display: block;
     position: relative;
     margin-left: 10px;
@@ -141,7 +140,6 @@ input {
 .category .align-items {
     width: 90%;
     position: relative;
-    margin-top: 100px;
 }
 
 .category .card-list {
@@ -280,7 +278,7 @@ input {
 h1 {
     text-align: center;
     margin-bottom: 20px;
-    color: #ff6347; /* Matching the border color */
+    color: #000000; /* Matching the border color */
     font-size: 32px;
 }
 
@@ -305,4 +303,17 @@ p {
     p {
         font-size: 16px;
     }
+}
+
+.menu-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
 }
