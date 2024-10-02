@@ -293,22 +293,36 @@
     </section>
 
     <script>
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
     
-        function addToCart(name, price) {
-            cart.push({ name, price });
-            localStorage.setItem('cart', JSON.stringify(cart));
-            // Alert removed
-            // alert(`${name} has been added to your cart!`);
+    function addToCart(name, price) {
+        cart.push({ name, price });
+        localStorage.setItem('cart', JSON.stringify(cart));
+        // Alert removed
+        // alert(`${name} has been added to your cart!`);
+    }
+    
+    document.addEventListener('click', function (event) {
+        if (event.target.classList.contains('add-to-cart')) {
+            const name = event.target.getAttribute('data-name');
+            const price = parseFloat(event.target.getAttribute('data-price'));
+            addToCart(name, price);
         }
-    
-        document.addEventListener('click', function (event) {
-            if (event.target.classList.contains('add-to-cart')) {
-                const name = event.target.getAttribute('data-name');
-                const price = parseFloat(event.target.getAttribute('data-price'));
-                addToCart(name, price);
-            }
-        });
-    </script>
+
+        if (event.target.id === 'confirm-order') {
+            const button = event.target;
+            button.classList.add('loading'); // Add loading class
+            button.innerText = 'Confirming...'; // Change button text
+
+            // Simulate an API call or processing time
+            setTimeout(() => {
+                button.classList.remove('loading'); // Remove loading class
+                button.innerText = 'Order Confirmed'; // Change button text back
+                // Here you can add further actions like clearing the cart, showing a confirmation message, etc.
+            }, 2000); // Adjust time as needed
+        }
+    }); 
+</script>
+
 </body>
 </html>

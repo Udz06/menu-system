@@ -28,12 +28,28 @@
         <ul id="cart-list"></ul>
         <div>Total Price: ₱<span id="total-price">0.00</span></div>
         <button id="reset-cart">Reset Cart</button>
+        <button id="confirm-order">Order</button> <!-- Order button -->
+        
+        <div id="receipt" style="display: none;"> <!-- Receipt section -->
+            <h3>Receipt</h3>
+            <ul id="receipt-list"></ul>
+            <div>Total Amount: ₱<span id="receipt-total">0.00</span></div>
+            <button id="order-confirmed" style="display: none;">Order Confirmed</button> <!-- Order Confirmed button -->
+        </div>
+
+        <div id="thank-you-message" style="display: none;"> <!-- Thank You Message -->
+            <h3>Thank You for Your Order!</h3>
+            <p>Your order has been successfully placed. We appreciate your business!</p>
+        </div>
     </section>
 
     <script>
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
         const cartList = document.getElementById('cart-list');
         const totalPriceElement = document.getElementById('total-price');
+        const receipt = document.getElementById('receipt');
+        const receiptList = document.getElementById('receipt-list');
+        const receiptTotalElement = document.getElementById('receipt-total');
 
         function updateCart() {
             cartList.innerHTML = '';
@@ -53,7 +69,47 @@
             localStorage.removeItem('cart'); // Clear local storage
             cart = []; // Reset cart array
             updateCart(); // Update cart display
+            receipt.style.display = 'none'; // Hide receipt
+            document.getElementById('thank-you-message').style.display = 'none'; // Hide thank you message
             alert('Your cart has been reset!');
+        });
+
+        // Confirm order functionality
+        document.getElementById('confirm-order').addEventListener('click', function() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!'); // Alert if cart is empty
+                return;
+            }
+
+            // Clear previous receipt
+            receiptList.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} - ₱${item.price}`;
+                receiptList.appendChild(li);
+                total += item.price;
+            });
+
+            receiptTotalElement.textContent = total.toFixed(2);
+            receipt.style.display = 'block'; // Show receipt
+            document.getElementById('order-confirmed').style.display = 'inline-block'; // Show order confirmed button
+
+            // Optional: Clear the cart after order confirmation
+            localStorage.removeItem('cart');
+            cart = [];
+            updateCart(); // Update cart display
+        });
+
+        // Order confirmed button functionality
+        document.getElementById('order-confirmed').addEventListener('click', function() {
+            // Hide the receipt and order confirmed button
+            receipt.style.display = 'none';
+            document.getElementById('order-confirmed').style.display = 'none';
+            
+            // Show thank you message
+            document.getElementById('thank-you-message').style.display = 'block';
         });
 
         updateCart(); // Load cart on page load

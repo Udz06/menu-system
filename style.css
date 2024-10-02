@@ -7,7 +7,9 @@
 body {
     margin: 0 100px;
     background-color: blanchedalmond;
+        font-family: 'Arial', sans-serif; /* Set a default font */
 }
+
 
 /* Menu */
 .nav {
@@ -44,7 +46,10 @@ body {
     font-family: sans-serif;
     font-size: 17px;
 }
-
+.nav ul li a:hover {
+    color: orangered; /* Change color on hover */
+    text-decoration: underline; /* Optional underline effect */
+}
 .align-items h3 {
     text-align: center; /* Center the text */
     margin: 20px 20px; /* to add some spacing above and below */
@@ -340,3 +345,74 @@ p {
 #reset-cart:active {
     transform: scale(0.95); /* Slightly decrease size when clicked */
 }
+/* Style for the Order button */
+#confirm-order {
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+#confirm-order:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Style for the receipt section */
+#receipt {
+    margin-top: 20px; /* Margin above receipt */
+    padding: 15px; /* Padding inside receipt */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light gray background */
+}
+
+#receipt h3 {
+    margin-bottom: 15px; /* Space below the title */
+}
+
+#receipt ul {
+    list-style-type: none; /* No bullet points */
+    padding: 0; /* No padding */
+}
+
+#receipt li {
+    padding: 5px 0; /* Padding for list items */
+    border-bottom: 1px solid #ddd; /* Light gray line between items */
+}
+
+#receipt li:last-child {
+    border-bottom: none; /* No line after last item */
+}
+
+#receipt div {
+    font-weight: bold; /* Bold text for total */
+    margin-top: 10px; /* Space above total */
+}
+.order-confirmed {
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 12px 24px; /* Padding */
+    font-size: 18px; /* Font size */
+    cursor: pointer; /* Pointer on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    text-align: center; /* Center text */
+    display: inline-block; /* Inline-block for better spacing */
+    margin-top: 10px; /* Margin above the button */
+}
+
+.order-confirmed:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+.order-confirmed:active {
+    background-color: #1e7e34; /* Even darker green when clicked */
+    transform: scale(0.95); /* Slightly decrease size when clicked */
+}
+
