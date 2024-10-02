@@ -44,12 +44,12 @@ body {
     font-family: sans-serif;
     font-size: 17px;
 }
+
 .align-items h3 {
     text-align: center; /* Center the text */
     margin: 20px 20px; /* to add some spacing above and below */
     font-size: 50px;
 }
-
 
 .nav ul .active::after {
     content: "";
@@ -66,6 +66,7 @@ input {
     cursor: pointer;
     font-weight: 600;
 }
+
 /* Content */
 .content {
     display: flex;
@@ -186,81 +187,7 @@ input {
     font-size: 18px; /* Slightly larger font for price */
     font-weight: bold; /* Make price bold */
 }
-.social-icons a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 4rem;
-    height: 4rem;
-    background-color: transparent;
-    border: 0.2rem solid #000000;
-    font-size: 2rem;
-    border-radius: 50%;
-    margin: 3rem 1.5rem 3rem 0;
-    transition: 0.3s ease;
-    color: #000000;
-}
 
-.social-icons a:hover {
-    color: black;
-    transform: scale(1.3) translateY(-5px);
-    background-color: #000000;
-    box-shadow: 0 0 25px #030303;
-}
-/* Services */
-.services {
-    padding: 50px 0;
-    background-color: transparent;
-    text-align: center;
-}
-
-.services h2 {
-    font-size: 36px;
-    margin-bottom: 30px;
-}
-
-.service-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    padding: 0 20px;
-}
-
-.service-item {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.service-item h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.service-item p {
-    font-size: 16px;
-    color: #555;
-}
-
-/* Social Media Icons */
-.social {
-    text-align: center;
-    padding: 30px 0;
-    background-color: transparent;
-}
-
-.social-icons a {
-    color: #080808;
-    font-size: 24px;
-    margin: 0 15px;
-    text-decoration: none;
-}
-
-.social-icons a:hover {
-    color: #ffffff;
-}
 /* About Canteen Section */
 .about-container {
     max-width: 800px; /* Limit the width */
@@ -270,11 +197,13 @@ input {
     border-radius: 10px; /* Rounded corners for the container */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a 3D effect */
 }
+
 .about-canteen {
     display: flex;
     justify-content: center; /* Align content in the center horizontally */
     margin-top: 50px;
 }
+
 h1 {
     text-align: center;
     margin-bottom: 20px;
@@ -283,7 +212,7 @@ h1 {
 }
 
 p {
-    font-size: px;
+    font-size: 16px; /* Fix to ensure it shows correctly */
     line-height: 1.6;
     margin-bottom: 15px;
     text-align: justify; /* Justify the text */
@@ -316,4 +245,98 @@ p {
     font-size: 3rem;
     font-weight: bold;
     text-align: center;
+}
+
+.add-to-cart {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.add-to-cart:hover {
+    background-color: #218838;
+}
+
+/* Cart Styles */
+.cart {
+    max-width: 600px; /* Limit the width of the cart */
+    margin: 20px auto; /* Center the cart */
+    padding: 20px;
+    background-color: #fff; /* White background for the cart */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.cart h2 {
+    text-align: center; /* Center the cart title */
+    font-size: 24px; /* Font size for the title */
+    color: orangered; /* Title color */
+}
+
+.cart ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+.cart ul li {
+    padding: 10px; /* Space inside each item */
+    border-bottom: 1px solid #ddd; /* Divider between items */
+}
+
+.cart ul li:last-child {
+    border-bottom: none; /* Remove last border */
+}
+
+.cart .total {
+    font-size: 20px; /* Font size for total */
+    font-weight: bold; /* Bold font */
+    text-align: right; /* Align total to the right */
+    margin-top: 10px; /* Space above total */
+    color: #007bff; /* Color for total */
+}
+
+.cart a {
+    display: inline-block; /* Block display for the link */
+    text-align: center; /* Center the text */
+    margin-top: 20px; /* Space above the button */
+    padding: 10px 20px; /* Padding for the button */
+    background-color: orangered; /* Button background color */
+    color: white; /* Button text color */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.cart a:hover {
+    background-color: #e65c5c; /* Darker on hover */
+}
+
+/* Add Transition Effect for Button */
+.add-to-cart, .cart a {
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform transition */
+}
+
+/* Reset Button */
+#reset-cart {
+    background-color: #d9534f; /* Bootstrap danger color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#reset-cart:hover {
+    background-color: #c9302c; /* Darker shade for hover effect */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+#reset-cart:active {
+    transform: scale(0.95); /* Slightly decrease size when clicked */
 }

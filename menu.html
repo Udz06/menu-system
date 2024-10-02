@@ -1,219 +1,343 @@
-<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="icons/icon.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Menu - Foodio</title>
-  </head>
-  <body>
+    <title>Our Menu - Mary's eatery</title>
+</head>
+<body>
     <section class="menu">
-      <div class="nav">
-        <div class="logo">
-          <h1>food<b>io</b></h1>
+        <div class="nav">
+            <div class="logo">
+                <h1>Mary's<b> eatery</b></h1>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
         </div>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="menu.html" class="active">Menu</a></li>
-          <li><a href="service.html">Service</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="about.html">About Us</a></li>
-        </ul>
-      </div>
     </section>
 
     <div class="page-title">Menu</div>
     <section class="category">
-      <div class="align-items">
-        <div class="menu-title">Appetizers</div>
-        <div class="card-list">
-          <div class="card">
-            <img src="images/burger.jpg" alt="Beef Burger" />
-            <div class="food-title">
-              <h1>Beef Burger</h1>
-            </div>
-            <div class="desc-food">
-              <p>Delicious beef burger with fresh ingredients.</p>
-            </div>
-            <div class="price">
-              <span>₱50.00</span>
-            </div>
-          </div>
-          <div class="card">
-            <img src="images/fries.jpg" alt="Fries" />
-            <div class="food-title">
-              <h1>Fries</h1>
-            </div>
-            <div class="desc-food">
-              <p>Crispy golden fries.</p>
-            </div>
-            <div class="price">
-              <span>₱30.00</span>
-            </div>
-          </div>
-          <div class="card">
-            <img src="images/tako.jpg" alt="Takoyaki" />
-            <div class="food-title">
-              <h1>Takoyaki</h1>
-            </div>
-            <div class="desc-food">
-              <p>Delicious octopus balls topped with bonito flakes.</p>
-            </div>
-            <div class="price">
-              <span>₱25.00</span>
-            </div>
-          </div>
-          <div class="card">
-            <img src="images/hotdog.jpg" alt="Hotdog" />
-            <div class="food-title">
-              <h1>Hotdog</h1>
-            </div>
-            <div class="desc-food">
-              <p>Classic hotdog served with mustard and ketchup.</p>
-            </div>
-            <div class="price">
-              <span>₱25.00</span>
-            </div>
-          </div>
+        <div class="cart">
+            <h2>Your Cart</h2>
+            <ul id="cart-list"></ul>
+            <div>Total Price: ₱<span id="total-price">0.00</span></div>
+            <button id="reset-cart">Reset Cart</button>
         </div>
+        <div class="align-items">
+            <div class="menu-title">Student Meal</div>
+            <div class="card-list">
+                <div class="card">
+                    <img src="images/longs.webp" alt="Longsilog" />
+                    <div class="food-title">
+                        <h1>Longsilog</h1>
+                    </div>
+                    <div class="desc-food">
+                        <p>Classic Filipino breakfast with longganisa, garlic rice, and a sunny-side-up egg.</p>
+                    </div>
+                    <div class="price">
+                        <span>₱50.00</span>
+                    </div>
+                    <button class="add-to-cart" data-name="Longsilog" data-price="50">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="images/longh.jpg" alt="Hotsilog" />
+                    <div class="food-title">
+                        <h1>Hotsilog</h1>
+                    </div>
+                    <div class="desc-food">
+                        <p>Spicy longganisa served with garlic rice and egg for a hearty start to your day.</p>
+                    </div>
+                    <div class="price">
+                        <span>₱50.00</span>
+                    </div>
+                    <button class="add-to-cart" data-name="Hotsilog" data-price="50">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="images/toc.webp" alt="Tocilog" />
+                    <div class="food-title">
+                        <h1>Tocilog</h1>
+                    </div>
+                    <div class="desc-food">
+                        <p>Sweet and savory tocino served with garlic rice and a fried egg.</p>
+                    </div>
+                    <div class="price">
+                        <span>₱50.00</span>
+                    </div>
+                    <button class="add-to-cart" data-name="Tocilog" data-price="50">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="images/ski.jpg" alt="Skinlesslog" />
+                    <div class="food-title">
+                        <h1>Skinlesslog</h1>
+                    </div>
+                    <div class="desc-food">
+                        <p>Flavorful skinless longganisa with a side of garlic rice and egg.</p>
+                    </div>
+                    <div class="price">
+                        <span>₱50.00</span>
+                    </div>
+                    <button class="add-to-cart" data-name="Skinlesslog" data-price="50">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="images/sio.jpg" alt="Siomai Rice" />
+                    <div class="food-title">
+                        <h1>Siomai Rice</h1>
+                    </div>
+                    <div class="desc-food">
+                        <p>Delicious siomai served over rice, perfect for a filling meal.</p>
+                    </div>
+                    <div class="price">
+                        <span>₱50.00</span>
+                    </div>
+                    <button class="add-to-cart" data-name="Siomai Rice" data-price="50">Add to Cart</button>
+                </div>
+            </div>
 
-        <div class="menu-title">Main Courses</div>
-        <div class="card-list">
-          <div class="card">
-            <img src="images/chicken2.jpg" alt="Grilled Chicken" />
-            <div class="food-title">
-              <h1>Grilled Chicken</h1>
+            <div class="menu-title">Ulam per Order</div>
+            <div class="card-list">
+                <div class="card">
+                    <img src="images/SNM.jpg" alt="Sinigang na Manok" />
+                    <div class="food-title">
+                        <h1>Sinigang na Manok</h1>
+                    </div>
+                    <div class="desc-food">
+                        <p>Sour chicken soup with fresh vegetables and a tamarind base.</p>
+                    </div>
+                    <div class="price">
+                        <span>₱70.00</span>
+                    </div>
+                    <button class="add-to-cart" data-name="Sinigang na Manok" data-price="70">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="images/friedchicken.jpg" alt="Fried Chicken" />
+                    <div class="food-title">
+                        <h1>Fried Chicken</h1>
+                    </div>
+                    <div class="desc-food">
+                        <p>Crispy fried chicken seasoned with special spices.</p>
+                    </div>
+                    <div class="price">
+                        <span>₱30.00</span>
+                    </div>
+                    <button class="add-to-cart" data-name="Fried Chicken" data-price="30">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="images/NB.jpg" alt="Nilagang Baboy" />
+                    <div class="food-title">
+                        <h1>Nilagang Baboy</h1>
+                    </div>
+                    <div class="desc-food">
+                        <p>Boiled pork soup with vegetables, perfect for a comforting meal.</p>
+                    </div>
+                    <div class="price">
+                        <span>₱70.00</span>
+                    </div>
+                    <button class="add-to-cart" data-name="Nilagang Baboy" data-price="70">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="images/D.jpg" alt="Dinuguan" />
+                    <div class="food-title">
+                        <h1>Dinuguan</h1>
+                    </div>
+                    <div class="desc-food">
+                        <p>Rich and savory pork blood stew, typically served with rice.</p>
+                    </div>
+                    <div class="price">
+                        <span>₱75.00</span>
+                    </div>
+                    <button class="add-to-cart" data-name="Dinuguan" data-price="75">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="images/PM.jpg" alt="Menudo" />
+                    <div class="food-title">
+                        <h1>Menudo</h1>
+                    </div>
+                    <div class="desc-food">
+                        <p>Pork stew with potatoes, carrots, and bell peppers in a tomato sauce.</p>
+                    </div>
+                    <div class="price">
+                        <span>₱75.00</span>
+                    </div>
+                    <button class="add-to-cart" data-name="Menudo" data-price="75">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="images/CA.jpg" alt="Afritada" />
+                    <div class="food-title">
+                        <h1>Afritada</h1>
+                    </div>
+                    <div class="desc-food">
+                        <p>Chicken or pork stew with vegetables in a savory tomato sauce.</p>
+                    </div>
+                    <div class="price">
+                        <span>₱75.00</span>
+                    </div>
+                    <button class="add-to-cart" data-name="Afritada" data-price="75">Add to Cart</button>
+                </div>
             </div>
-            <div class="desc-food">
-              <p>Juicy grilled chicken.</p>
-            </div>
-            <div class="price">
-              <span>₱165.00 3pcs</span>
-            </div>
-          </div>
-          <div class="card">
-            <img src="images/friedchicken.jpg" alt="Fried Chicken" />
-            <div class="food-title">
-              <h1>Fried Chicken</h1>
-            </div>
-            <div class="desc-food">
-              <p>Crispy fried chicken with special spices.</p>
-            </div>
-            <div class="price">
-              <span>₱195.00 3pcs</span>
-            </div>
-          </div>
-          <div class="card">
-            <img src="images/pasta.jpg" alt="Pasta" />
-            <div class="food-title">
-              <h1>Carbonara</h1>
-            </div>
-            <div class="desc-food">
-              <p>Delicious pasta with fresh vegetables and herbs.</p>
-            </div>
-            <div class="price">
-              <span>₱75.00</span>
-            </div>
-          </div>
-          <div class="card">
-            <img src="images/spag.jpg" alt="Spaghetti" />
-            <div class="food-title">
-              <h1>Spaghetti</h1>
-            </div>
-            <div class="desc-food">
-              <p>
-                Spaghetti is a long, thin, cylindrical pasta that is a staple of
-                Italian cuisine.
-              </p>
-            </div>
-            <div class="price">
-              <span>₱75.00</span>
-            </div>
-          </div>
-        </div>
 
-        <div class="menu-title">Drinks</div>
-        <div class="card-list">
-          <div class="card">
-            <img src="images/smoothie.jpg" alt="Smoothie" />
-            <div class="food-title">
-              <h1>Smoothie</h1>
+            <div class="menu-title">Drinks</div>
+            <div class="card-list">
+                <div class="card">
+                    <img src="images/BW.png" alt="Water" />
+                    <div class="food-title">
+                        <h1>Water</h1>
+                    </div>
+                    <div class="desc-food">
+                        <p>Refreshing water to quench your thirst.</p>
+                    </div>
+                    <div class="price">
+                        <span>₱15.00</span>
+                    </div>
+                    <button class="add-to-cart" data-name="Water" data-price="15">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="images/iceT.jpg" alt="Iced Tea" />
+                    <div class="food-title">
+                        <h1>Iced Tea</h1>
+                    </div>
+                    <div class="desc-food">
+                        <p>Refreshing iced tea made with fresh fruits.</p>
+                    </div>
+                    <div class="price">
+                        <span>₱25.00</span>
+                    </div>
+                    <button class="add-to-cart" data-name="Iced Tea" data-price="25">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="images/ice c.jpg" alt="Iced Coffee" />
+                    <div class="food-title">
+                        <h1>Iced Coffee</h1>
+                    </div>
+                    <div class="desc-food">
+                        <p>Refreshing iced coffee made with fresh ingredients.</p>
+                    </div>
+                    <div class="price">
+                        <span>₱25.00</span>
+                    </div>
+                    <button class="add-to-cart" data-name="Iced Coffee" data-price="25">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="images/softD.jpg" alt="Soft Drinks" />
+                    <div class="food-title">
+                        <h1>Soft Drinks</h1>
+                    </div>
+                    <div class="desc-food">
+                        <p>Refreshing cold soft drinks to complement your meal.</p>
+                    </div>
+                    <div class="price">
+                        <span>₱20.00</span>
+                    </div>
+                    <button class="add-to-cart" data-name="Soft Drinks" data-price="20">Add to Cart</button>
+                </div>
             </div>
-            <div class="desc-food">
-              <p>Refreshing smoothie made with fresh fruits.</p>
-            </div>
-            <div class="price">
-              <span>₱30.00</span>
-            </div>
-          </div>
-          <div class="card">
-            <img src="images/iceT.jpg" alt="Iced Tea" />
-            <div class="food-title">
-              <h1>Iced Tea</h1>
-            </div>
-            <div class="desc-food">
-              <p>Refreshing iced tea made with fresh fruits.</p>
-            </div>
-            <div class="price">
-              <span>₱25.00</span>
-            </div>
-          </div>
-          <div class="card">
-            <img src="images/ice c.jpg" alt="Iced Coffee" />
-            <div class="food-title">
-              <h1>Iced Coffee</h1>
-            </div>
-            <div class="desc-food">
-              <p>Refreshing iced coffee made with fresh ingredients.</p>
-            </div>
-            <div class="price">
-              <span>₱25.00</span>
-            </div>
-          </div>
-          <div class="card">
-            <img src="images/softD.jpg" alt="Soft Drinks" />
-            <div class="food-title">
-              <h1>Soft Drinks</h1>
-            </div>
-            <div class="desc-food">
-              <p>Refreshing cold soft drinks.</p>
-            </div>
-            <div class="price">
-              <span>₱20.00</span>
-            </div>
-          </div>
-        </div>
 
-        <div class="menu-title">Desserts</div>
-        <div class="card-list">
-          <div class="card">
-            <img src="images/cake.jpg" alt="Cake" />
-            <div class="food-title">
-              <h1>Cake</h1>
+            <div class="menu-title">Add-ons</div>
+            <div class="card-list">
+                <div class="card">
+                    <img src="images/PC.webp" alt="Pancit Canton" />
+                    <div class="food-title">
+                        <h1>Pancit Canton</h1>
+                    </div>
+                    <div class="desc-food">
+                        <p>Stir-fried noodles with vegetables and your choice of meat.</p>
+                    </div>
+                    <div class="price">
+                        <span>₱25.00</span>
+                    </div>
+                    <button class="add-to-cart" data-name="Pancit Canton" data-price="25">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="images/CN.webp" alt="Cup Noodles" />
+                    <div class="food-title">
+                        <h1>Cup Noodles</h1>
+                    </div>
+                    <div class="desc-food">
+                        <p>Instant noodles, perfect for a quick snack.</p>
+                    </div>
+                    <div class="price">
+                        <span>₱25.00</span>
+                    </div>
+                    <button class="add-to-cart" data-name="Cup Noodles" data-price="25">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="images/CC.jpg" alt="Coffee" />
+                    <div class="food-title">
+                        <h1>Coffee</h1>
+                    </div>
+                    <div class="desc-food">
+                        <p>Freshly brewed coffee to kickstart your day.</p>
+                    </div>
+                    <div class="price">
+                        <span>₱15.00</span>
+                    </div>
+                    <button class="add-to-cart" data-name="Coffee" data-price="15">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="images/R.jpg" alt="Rice" />
+                    <div class="food-title">
+                        <h1>Rice</h1>
+                    </div>
+                    <div class="desc-food">
+                        <p>Steamed rice, a perfect companion to your meals.</p>
+                    </div>
+                    <div class="price">
+                        <span>₱15.00</span>
+                    </div>
+                    <button class="add-to-cart" data-name="Rice" data-price="15">Add to Cart</button>
+                </div>
             </div>
-            <div class="desc-food">
-              <p>Decadent cake with rich frosting.</p>
-            </div>
-            <div class="price">
-              <span>₱75.00</span>
-            </div>
-          </div>
-          <div class="card">
-            <img src="images/salad.jpg" alt="Fruit Salad" />
-            <div class="food-title">
-              <h1>Fruit Salad</h1>
-            </div>
-            <div class="desc-food">
-              <p>Fresh salad with seasonal fruits.</p>
-            </div>
-            <div class="price">
-              <span>₱75.00</span>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
-  </body>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartList = document.getElementById('cart-list');
+        const totalPriceElement = document.getElementById('total-price');
+    
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCart();
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+    
+        function updateCart() {
+            cartList.innerHTML = '';
+            let total = 0;
+    
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} - ₱${item.price}`;
+                cartList.appendChild(li);
+                total += item.price;
+            });
+    
+            totalPriceElement.textContent = total.toFixed(2);
+        }
+    
+        document.addEventListener('click', function (event) {
+            if (event.target.classList.contains('add-to-cart')) {
+                const name = event.target.getAttribute('data-name');
+                const price = parseFloat(event.target.getAttribute('data-price'));
+                addToCart(name, price);
+                alert(`${name} has been added to your cart!`);
+            }
+        });
+    
+        // Reset cart functionality
+        document.getElementById('reset-cart').addEventListener('click', function() {
+            localStorage.removeItem('cart'); // Clear local storage
+            cart = []; // Reset cart array
+            updateCart(); // Update cart display
+            alert('Your cart has been reset!');
+        });
+    
+        updateCart(); // Load cart on page load
+    </script>
+</body>
 </html>
