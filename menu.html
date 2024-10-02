@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -17,21 +18,17 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html" class="active">Menu</a></li>
                 <li><a href="about.html">About Us</a></li>
+                <li><a href="cart.html">Your Cart</a></li> <!-- Link to cart page -->
             </ul>
         </div>
     </section>
 
     <div class="page-title">Menu</div>
     <section class="category">
-        <div class="cart">
-            <h2>Your Cart</h2>
-            <ul id="cart-list"></ul>
-            <div>Total Price: ₱<span id="total-price">0.00</span></div>
-            <button id="reset-cart">Reset Cart</button>
-        </div>
         <div class="align-items">
             <div class="menu-title">Student Meal</div>
             <div class="card-list">
+                <!-- Example card -->
                 <div class="card">
                     <img src="images/longs.webp" alt="Longsilog" />
                     <div class="food-title">
@@ -297,27 +294,12 @@
 
     <script>
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const cartList = document.getElementById('cart-list');
-        const totalPriceElement = document.getElementById('total-price');
     
         function addToCart(name, price) {
             cart.push({ name, price });
-            updateCart();
             localStorage.setItem('cart', JSON.stringify(cart));
-        }
-    
-        function updateCart() {
-            cartList.innerHTML = '';
-            let total = 0;
-    
-            cart.forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = `${item.name} - ₱${item.price}`;
-                cartList.appendChild(li);
-                total += item.price;
-            });
-    
-            totalPriceElement.textContent = total.toFixed(2);
+            // Alert removed
+            // alert(`${name} has been added to your cart!`);
         }
     
         document.addEventListener('click', function (event) {
@@ -325,19 +307,8 @@
                 const name = event.target.getAttribute('data-name');
                 const price = parseFloat(event.target.getAttribute('data-price'));
                 addToCart(name, price);
-                alert(`${name} has been added to your cart!`);
             }
         });
-    
-        // Reset cart functionality
-        document.getElementById('reset-cart').addEventListener('click', function() {
-            localStorage.removeItem('cart'); // Clear local storage
-            cart = []; // Reset cart array
-            updateCart(); // Update cart display
-            alert('Your cart has been reset!');
-        });
-    
-        updateCart(); // Load cart on page load
     </script>
 </body>
 </html>
