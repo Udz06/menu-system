@@ -19,6 +19,7 @@
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="cart.html" class="active">Your Cart</a></li>
+                
             </ul>
         </div>
     </section>
@@ -30,17 +31,21 @@
         <button id="reset-cart">Reset Cart</button>
         <button id="confirm-order">Order</button> <!-- Order button -->
         
-        <div id="receipt" style="display: none;"> <!-- Receipt section -->
+        <div id="receipt" style="display: none;">
             <h3>Receipt</h3>
             <ul id="receipt-list"></ul>
-            <div>Total Amount: ₱<span id="receipt-total">0.00</span></div>
-            <button id="order-confirmed" style="display: none;">Order Confirmed</button> <!-- Order Confirmed button -->
+            <p>Total: ₱<span id="receipt-total"></span></p>
+            <button id="order-confirmed" style="display: none;" class="order-button">Order Confirmed</button>
         </div>
+        
 
-        <div id="thank-you-message" style="display: none;"> <!-- Thank You Message -->
+        <div id="thank-you-message" style="display: none;" class="thank-you">
             <h3>Thank You for Your Order!</h3>
+            <p>Your order number is: <span id="order-number" class="order-number"></span></p>
             <p>Your order has been successfully placed. We appreciate your business!</p>
         </div>
+        
+        <button id="order-confirmed" style="display: none;" class="order-button">Order Confirmed</button>
     </section>
 
     <script>
@@ -50,21 +55,22 @@
         const receipt = document.getElementById('receipt');
         const receiptList = document.getElementById('receipt-list');
         const receiptTotalElement = document.getElementById('receipt-total');
-
+        const orderNumberElement = document.getElementById('order-number'); // Element for order number
+    
         function updateCart() {
             cartList.innerHTML = '';
             let total = 0;
-
+    
             cart.forEach(item => {
                 const li = document.createElement('li');
                 li.textContent = `${item.name} - ₱${item.price}`;
                 cartList.appendChild(li);
                 total += item.price;
             });
-
+    
             totalPriceElement.textContent = total.toFixed(2);
         }
-
+    
         document.getElementById('reset-cart').addEventListener('click', function() {
             localStorage.removeItem('cart'); // Clear local storage
             cart = []; // Reset cart array
@@ -73,37 +79,46 @@
             document.getElementById('thank-you-message').style.display = 'none'; // Hide thank you message
             alert('Your cart has been reset!');
         });
-
+    
+        // Function to generate a random order number
+        function generateOrderNumber() {
+            return Math.floor(100000 + Math.random() * 900000); // Generates a random 6-digit number
+        }
+    
         // Confirm order functionality
         document.getElementById('confirm-order').addEventListener('click', function() {
             if (cart.length === 0) {
                 alert('Your cart is empty!'); // Alert if cart is empty
                 return;
             }
-
+    
             // Clear previous receipt
             receiptList.innerHTML = '';
             let total = 0;
-
+    
             cart.forEach(item => {
                 const li = document.createElement('li');
                 li.textContent = `${item.name} - ₱${item.price}`;
                 receiptList.appendChild(li);
                 total += item.price;
             });
-
+    
             receiptTotalElement.textContent = total.toFixed(2);
             receipt.style.display = 'block'; // Show receipt
             document.getElementById('order-confirmed').style.display = 'inline-block'; // Show order confirmed button
-
+    
             // Optional: Clear the cart after order confirmation
             localStorage.removeItem('cart');
             cart = [];
             updateCart(); // Update cart display
         });
-
+    
         // Order confirmed button functionality
         document.getElementById('order-confirmed').addEventListener('click', function() {
+            // Generate and display the order number
+            const orderNumber = generateOrderNumber();
+            orderNumberElement.textContent = orderNumber;
+    
             // Hide the receipt and order confirmed button
             receipt.style.display = 'none';
             document.getElementById('order-confirmed').style.display = 'none';
@@ -111,8 +126,9 @@
             // Show thank you message
             document.getElementById('thank-you-message').style.display = 'block';
         });
-
+    
         updateCart(); // Load cart on page load
     </script>
+    
 </body>
 </html>

@@ -7,9 +7,8 @@
 body {
     margin: 0 100px;
     background-color: blanchedalmond;
-        font-family: 'Arial', sans-serif; /* Set a default font */
+    font-family: 'Arial', sans-serif; /* Set a default font */
 }
-
 
 /* Menu */
 .nav {
@@ -46,10 +45,12 @@ body {
     font-family: sans-serif;
     font-size: 17px;
 }
+
 .nav ul li a:hover {
     color: orangered; /* Change color on hover */
     text-decoration: underline; /* Optional underline effect */
 }
+
 .align-items h3 {
     text-align: center; /* Center the text */
     margin: 20px 20px; /* to add some spacing above and below */
@@ -345,6 +346,7 @@ p {
 #reset-cart:active {
     transform: scale(0.95); /* Slightly decrease size when clicked */
 }
+
 /* Style for the Order button */
 #confirm-order {
     background-color: #28a745; /* Green background */
@@ -392,6 +394,7 @@ p {
     font-weight: bold; /* Bold text for total */
     margin-top: 10px; /* Space above total */
 }
+
 .order-confirmed {
     background-color: #28a745; /* Green background */
     color: white; /* White text */
@@ -413,6 +416,61 @@ p {
 
 .order-confirmed:active {
     background-color: #1e7e34; /* Even darker green when clicked */
-    transform: scale(0.95); /* Slightly decrease size when clicked */
 }
 
+.thank-you {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.order-number {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #4CAF50; /* Green color for the order number */
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px dashed #4CAF50; /* Dashed border for a 'paper' effect */
+    background-color: #e8f5e9; /* Light green background */
+    border-radius: 4px;
+}
+
+.order-button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 20px 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; /* Center the button */
+    transition: background-color 0.3s;
+}
+
+.order-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+body.dark-mode {
+    background-color: #2c2c2c; /* Dark background */
+    color: white; /* Light text */
+}
+
+.nav.dark-mode {
+    background-color: #3e3e3e; /* Darker nav background */
+}
+
+.cart.dark-mode {
+    background-color: #444; /* Dark cart background */
+}
+
+.about-container.dark-mode {
+    background-color: #3e3e3e; /* Darker container background */
+}
